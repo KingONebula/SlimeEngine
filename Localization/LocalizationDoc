@@ -1,0 +1,23 @@
+Language.cs
+-Scriptable Object
+-TMP_FontAsset[] fonts
+-TextAsset[] maps;
+
+LocalizationSettings.cs
+-Language[] languages
+-this[] (returns languages.maps)
+
+Localization.cs
+-enum Languages currentLanguage
+-LocalizationSettings currentSettings
+GetText(int mapID, int textID)
+
+Calling GetText() and LocalizationSettings[] will pull from Localization.currentLanguage
+textID is used to call a block of text in a text file.
+
+
+ExampleTextFile.txt
+[00]Every text block must begin with XX and end in END in square brackets[END]
+[01]This has the textID 01[END]
+[02]This supports
+line breaks.[END]
